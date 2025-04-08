@@ -2,6 +2,7 @@ import express, { Application, NextFunction, Request, Response } from 'express';
 import cors from 'cors';
 import { user } from './app/modules/user/user.route';
 import { userLogin } from './app/modules/auth/auth.route';
+import newsRoutes from './app/modules/news/news.route'; 
 
 
 // Adjust the path as necessary
@@ -12,6 +13,7 @@ app.use(express.json());
 
  app.use('/api/v1', user);
  app.use('/api/v1', userLogin);
+ app.use('/api/v1/news', newsRoutes);
 
 
 app.get('/', (req: Request, res: Response) => {
