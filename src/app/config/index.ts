@@ -9,6 +9,8 @@ export default {
   database_url: process.env.MONGO_URI,
   jwt_secret: process.env.JWT_SECRET,
   jwt_expiration: process.env.JWT_EXPIRATION,
+  newsDatakey: process.env.NEWSDATA_API_KEY,
+  newsApiKey: process.env.NEWS_API_KEY,
   
   
 };

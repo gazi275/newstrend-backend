@@ -1,14 +1,15 @@
 import express, { Request, Response } from 'express';
 import axios from 'axios';
+import config from '../../config';
+
 
 const router = express.Router();
 
-// GET Bangladesh news from NewsData.io
 router.get('/bangladesh', async (req: Request, res: Response) => {
   try {
     const response = await axios.get('https://newsdata.io/api/1/news', {
       params: {
-        apikey: process.env.NEWSDATA_API_KEY,
+        apikey: config.newsDatakey,
         country: 'bd',
         language: 'en',
         category: 'top',
@@ -25,7 +26,7 @@ router.get('/international', async (req: Request, res: Response) => {
   try {
     const response = await axios.get('https://newsapi.org/v2/top-headlines', {
       params: {
-        apiKey: process.env.NEWS_API_KEY,
+        apiKey: config.newsApiKey,
         category: 'general',
         language: 'en',
         pageSize: 100,
